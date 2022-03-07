@@ -42,6 +42,6 @@ wmic cpu get name
 
 
 echo.
-echo Completed! Thank you!
+echo Process Complete!
 
 pause
