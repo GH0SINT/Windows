@@ -1,6 +1,6 @@
-[CmdletBinding()]
+CmdletBinding()]
 param (
-    [int]$Length = 16,  # Change password length here
+    [int]$Length = 16,
     [switch]$IncludeLower = $true,
     [switch]$IncludeUpper = $true,
     [switch]$IncludeDigits = $true,
@@ -14,28 +14,30 @@ Write-Host "  \ V / | |_/ / /_\ \\ .--.\ .--.  " -ForegroundColor Cyan
 Write-Host "  /   \ |  __/|  _  | \--. \\--. \ " -ForegroundColor Cyan
 Write-Host " / /^\ \| |   | | | |/\__/ /\__/ / " -ForegroundColor Cyan
 Write-Host " \/   \/\_|   \_| |_/\____/\____/  " -ForegroundColor Cyan -NoNewLine
-Write-Host " [v1.0] "
-Write-Host "            by ghOSINT [github.com/GH0SINT]        "
+Write-Host " [v1.2] "
+Write-Host "           by ghOSINT [github.com/GH0SINT]        "
 Write-Host ""
 Write-Host "================================================" -ForegroundColor Cyan
-Write-Host "  Welcome to XPASS a Random Password Generator" -ForegroundColor Green
+Write-Host " Welcome to XPASS - A Random Password Generator " -ForegroundColor Green
 Write-Host "================================================" -ForegroundColor Cyan
 Write-Host ""
-$response = Read-Host "Do you want to generate a random password? [Y/N]"
+
+$response = Read-Host "Do you want to generate a random password? [Y/N] (Press Enter for Yes)"
 Write-Host ""
 if ($response -eq "" -or $response -match "^[Yy]$") {
     do {
+        # Character Pools
         $lowerPool = if ($IncludeLower) { @('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z') } else { @() }
         $upperPool = if ($IncludeUpper) { @('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z') } else { @() }
         $digitPool = if ($IncludeDigits) { @('0','1','2','3','4','5','6','7','8','9') } else { @() }
         $symbolPool = if ($IncludeSymbols) { @('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', ':', ';', '<', '>', '?', '/', '|', '~') } else { @() }
 
         $masterPool = $lowerPool + $upperPool + $digitPool + $symbolPool
-        if ($masterPool.Count -eq 0) { Throw "You must enable at least one character set (lower, upper, digits, symbols)." }
+        if ($masterPool.Count -eq 0) { Throw "You must enable at least one character set (lowercase, uppercase, digits, symbols)." }
 
         $minRequired = @($lowerPool, $upperPool, $digitPool, $symbolPool | Where-Object { $_.Count -gt 0 }).Count
         if ($Length -lt $minRequired) { Throw "Length $Length is too short for the selected options. Minimum required length is $minRequired." }
-
+       
         $guaranteed = @()
         if ($IncludeLower) { $guaranteed += $lowerPool | Get-Random }
         if ($IncludeUpper) { $guaranteed += $upperPool | Get-Random }
@@ -46,17 +48,41 @@ if ($response -eq "" -or $response -match "^[Yy]$") {
         $randomChars = 1..$remainingCount | ForEach-Object { $masterPool | Get-Random }
         $allChars = $guaranteed + $randomChars | Get-Random -Count $Length
         $password = -join $allChars
-
+        Set-Clipboard -Value $password
+        Write-Host ""
         Write-Host "Generated Password:  $password" -ForegroundColor Yellow
         Write-Host ""
-
-        $response = Read-Host "Do you want to generate another random password? [Y/N]"
+        Write-Host "Password has been copied to your clipboard." -ForegroundColor Green
+        Write-Host ""
+        do {
+            Write-Host "Clipboard will be cleared in 60 seconds..." -ForegroundColor Cyan
+            Start-Sleep -Seconds 60
+            Set-Clipboard -Value " "
+            Write-Host ""
+            Write-Host "Clipboard has been cleared." -ForegroundColor Green
+            Write-Host ""
+            $copyResponse = Read-Host "Do you want to copy the password again? [Y/N] (Press Enter for Yes)"
+            if ($copyResponse -eq "" -or $copyResponse -match "^[Yy]$") {
+                Write-Host ""
+                Set-Clipboard -Value $password
+                Write-Host ""
+                Write-Host "Password has been copied to your clipboard again." -ForegroundColor Green
+            } else {
+                Write-Host ""
+                Write-Host "Password was not copied again." -ForegroundColor Yellow
+                break
+            }
+        } while ($true)
+        Write-Host ""
+        $response = Read-Host "Do you want to generate another random password? [Y/N] (Press Enter for Yes)"
         Write-Host ""
         if ($response -ne "" -and $response -notmatch "^[Yy]$") {
-            Write-Host "Thank you for using the Random Password Generator. Goodbye!" -ForegroundColor Green
+            Write-Host ""
+            Write-Host "Thank you for using XPASS. Goodbye!" -ForegroundColor Green
             break
         }
     } while ($true)
 } else {
+    Write-Host ""
     Write-Host "Thank you for using XPASS. The Script will now terminate..." -ForegroundColor Green
 }
