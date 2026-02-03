@@ -5,19 +5,26 @@ The repo is organized into four self‑contained sub‑folders, each with its ow
 
 ## 📚 Table of Contents
 
-1️⃣ Overview – what the repo contains and why it .
+## 1️⃣ Overview
+– what the repo contains and why it .
 
-2️⃣ Bash – portable Bash utilities (scripts/bash/README.md)
+##  2️⃣ Bash
+– portable Bash utilities (scripts/bash/README.md)
 
-3️⃣ Batch – classic Windows .bat helpers (scripts/batch/README.md)
+## 3️⃣ Batch
+– classic Windows .bat helpers (scripts/batch/README.md)
 
-4️⃣ PowerShell – reusable PowerShell functions and one‑offs (scripts/powershell/README.md)
+## 4️⃣ PowerShell
+– reusable PowerShell functions and one‑offs (scripts/powershell/README.md)
 
-5️⃣ Python – small Python 3 scripts (scripts/python/README.md)
+## 5️⃣ Python
+– small Python 3 scripts (scripts/python/README.md)
 
-6️⃣ License – repo‑wide MIT‑style license
+## 6️⃣ License
+– repo‑wide MIT‑style license
 
-7️⃣ Contributing – how to propose changes
+## 7️⃣ Contributing
+– how to propose changes
 
 (Click any item to jump to the corresponding section, or follow the links to the sub‑folder READMEs for full details.)
 
