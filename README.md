@@ -9,7 +9,7 @@
 > All scripts are zero‑dependency (except where a standard interpreter is required) and preserve their own commit history.  
 > Some scripts are created some are credited to other authors.
 
-## 📚 Table of Contents
+## 📚 Table of Contents 📚
 
 1️⃣ [Bash](#1️⃣-bash)  
 2️⃣ [Batch](#2️⃣-batch)  
@@ -18,7 +18,7 @@
 5️⃣ [License](#5️⃣-license)  
 6️⃣ [Contributing](#6️⃣-contributing)  
 
-## Getting started  
+## 🚀 Getting started  🚀 
 
 ```bash
 # Clone the repo
