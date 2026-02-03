@@ -21,6 +21,8 @@ The repo is organized into four self‑contained sub‑folders, each with its ow
 
 (Click any item to jump to the corresponding section, or follow the links to the sub‑folder READMEs for full details.)
 
+## 1️⃣ Overview 
+
 1️⃣ Bash (scripts/bash/README.md)
 Portable Bash utilities for Linux/macOS/WSL.
 See the full README in scripts/bash/README.md for a list of scripts, usage examples, prerequisites, and contribution guidelines.
