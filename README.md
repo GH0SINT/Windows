@@ -67,6 +67,8 @@ Tip: If you introduce a completely new language/toolset, copy the structure of t
 | Python     | Any OS with Python 3.8+                  |
 
 💬 Questions? Open an issue, or drop me a line at gh0sint@protonmail.com.
+
 🔧 Found a bug? Please file a GitHub Issue with steps to reproduce.
+
 🗒️ Changelog – see CHANGELOG.md for a history of releases and major updates.
 
