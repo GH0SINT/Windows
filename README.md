@@ -1,4 +1,4 @@
-##GH0SINT / scripts – Master README
+## GH0SINT / scripts – Master README
 
 Welcome to the GH0SINT / scripts repository – a curated collection of utility scripts written in Bash, Windows Batch, PowerShell, and Python.
 The repo is organized into four self‑contained sub‑folders, each with its own detailed README. Below you’ll find a quick tour that starts at this top‑level file and guides you through every sub‑folder.
