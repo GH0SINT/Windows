@@ -29,6 +29,7 @@ The repo is organized into four self‑contained sub‑folders, each with its ow
 (Click any item to jump to the corresponding section, or follow the links to the sub‑folder READMEs for full details.)
 
 ## 1️⃣ Overview 
+- Each top‑level folder (bash, batch, powershell, python) is a stand‑alone toolkit – you can clone the repo and dive straight into the language you need.
 
 1️⃣ Bash (scripts/bash/README.md)
 Portable Bash utilities for Linux/macOS/WSL.
