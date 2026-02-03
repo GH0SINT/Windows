@@ -29,19 +29,19 @@ ls -d */   # shows: bash/  batch/  powershell/  python/
 ```
 Pick the language you need and follow the linked README for usage details.
 
-1️⃣ Bash (scripts/bash/README.md)
+1️⃣ Bash (bash/README.md)
 Portable Bash utilities for Linux/macOS/WSL.
 See the full README in scripts/bash/README.md for a list of scripts, usage examples, prerequisites, and contribution guidelines.
 
-2️⃣ Batch (scripts/batch/README.md)
+2️⃣ Batch (batch/README.md)
 Classic Windows .bat helpers (zero‑dependency).
 See the full README in scripts/batch/README.md for script descriptions, usage, and contribution notes.
 
-3️⃣ PowerShell (scripts/powershell/README.md)
+3️⃣ PowerShell (powershell/README.md)
 Reusable PowerShell functions, modules, and one‑offs.
 See the full README in scripts/powershell/README.md for a catalog of scripts, examples, and how to contribute.
 
-4️⃣ Python (scripts/python/README.md)
+4️⃣ Python (python/README.md)
 Small Python 3 scripts with minimal third‑party dependencies.
 See the full README in scripts/python/README.md for script details, installation steps, and contribution advice.
 
