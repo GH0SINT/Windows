@@ -45,11 +45,11 @@ source ~/.bashrc
 ## Usage patterns
 1️⃣ Direct execution  
 
-# Make the script executable (once)
+Make the script executable (once)
 ```bash
 chmod +x <scriptname>.sh
 ```
-# Run it
+Run it
 ```bash
 ./<scriptname>.sh /path/to/project
 ```
